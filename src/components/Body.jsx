@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Restaurantcard from "./RestaurantCard";
 import { useState } from "react"; //named import
 import { filterData , getRestaurants } from "../utils/helper";
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
 
 
 const Body = () => {
