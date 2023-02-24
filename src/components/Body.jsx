@@ -63,7 +63,7 @@ const Body = () => {
     </form>
   </div>
 
-  <div className="grid grid-row place-items-center">
+  <div className="grid grid-row place-items-center pb-10">
   {
     filteredRestaurants.length === 0
       ? <h1 className="grid place-content-center pt-14 font-bold text-3xl">Sorry, No Restaurant Found</h1>
