@@ -5,3 +5,7 @@ export const imageUrl = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy
 
 export const shimmerImageUrl =
   "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png";
+
+  
+export const IMG_CDN_URL =
+"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";

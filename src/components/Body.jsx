@@ -4,6 +4,7 @@ import Restaurantcard from "./RestaurantCard";
 import { useState } from "react"; //named import
 import { filterData , getRestaurants } from "../utils/helper";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 const Body = () => {
@@ -70,12 +71,16 @@ const Body = () => {
       : <div className="grid grid-cols-4 grid-flow-row gap-6 pt-11 max-w-fit max-sm:grid-cols-1 max-xl:grid-cols-3 max-xl:gap-0 max-md:grid-cols-2">
           {
             filteredRestaurants.map((restaurant) => {
-              return <Restaurantcard {...restaurant.data} key={restaurant.data.id}/>
+              return <Link
+               to={"/restaurant/" + restaurant.data.id}
+                key={restaurant.data.id}>
+                <Restaurantcard {...restaurant.data}/>
+                </Link>
             })
           }
         </div>
   }
-    </div>
+  </div>
 
     </>
   ) 

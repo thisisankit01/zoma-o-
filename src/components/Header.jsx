@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"; //its bts use anchor tag cause browser understands that
 
 const Title = () =>{
   return(
@@ -20,9 +21,9 @@ const Header = () => {
       <Title />
       <div className="nav-item flex pt-5 max-sm:hidden">
         <ul className="flex flex-row">
-          <li className="px-4"><a href="/">Home</a></li>
-          <li className="px-4"><a href="/">About Us</a></li>
-          <li className="px-4"><a href="/">Contact</a></li>
+          <li className="px-4"><Link to="/">Home</Link></li>
+          <li className="px-4"><Link to="/about">About Us</Link></li>
+          <li className="px-4"><Link to="/contact">Contact</Link></li>
         </ul> 
      </div>  
          <div className="grid grid-flow-col space-x-8">
