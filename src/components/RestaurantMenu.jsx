@@ -30,7 +30,7 @@ function RestaurantMenu() {
 
   return (
   <>
-     <h1 className='grid place-content-center pt-6 font-bold text-4xl text-slate-500'>{restaurantMenu.name} Menu</h1>
+     <h1 className='grid place-content-center pt-6 font-bold text-4xl text-slate-500'>{restaurantMenu.name} - Menu</h1>
 
 <div className='space-x-10 grid grid-flow-col max-sm:grid-flow-row place-content-center pt-10 px-10'>
 
