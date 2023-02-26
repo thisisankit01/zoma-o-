@@ -38,7 +38,6 @@ const Shimmer = () => {
               <img className="w-[90%] h-4 rounded" src={shimmerImageUrl} />
             </div>
           ))}
-        ;
       </div>
   </div>
     </>
