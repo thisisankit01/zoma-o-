@@ -7,7 +7,7 @@ const Title = () =>{
   <h1 id="title" key="h2" className="font-extrabold">
     <a href="/">Zoma'o'</a>
   </h1>
-  <p className="text-sm font-extralight text-slate-400">The British Restaurant</p>
+  <p className="text-sm font-extralight text-slate-500">The British Restaurant</p>
   </div>
   );
 };
