@@ -9,7 +9,7 @@ const Shimmer = () => {
       <input 
           type="search" 
           id="default-search" 
-          className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-red-300 dark:focus:border-blue-500 focus:outline-none" 
+          className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-red-300 dark:focus:border-red-500 focus:outline-none" 
           placeholder="Search Restaurant Food..."      
           />
         <button className="py-2 bg-gray-50 px-8 rounded-md font-extralight max-sm:hidden text-slate-500">
