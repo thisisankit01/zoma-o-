@@ -47,11 +47,11 @@ const Header = () => {
           }
 
 
-        <button className="py-3 right-0 focus:outline-none block sm:hidden bg-red-500 px-4 rounded-md text-white ">
+        <button className="py-3 mx-2 focus:outline-none block sm:hidden bg-red-500 px-4 rounded-md text-white ">
          <div className="w-5 h-[0.15rem] bg-white mb-1"></div>
          <div className="w-5 h-[0.15rem] bg-white mb-1"></div>
          <div className="w-5 h-[0.15rem] bg-white"></div>
-         <div className="absolute top-0 right-0 h-screen bg-white border w-8/12">
+         <div className="absolute top-20 right-0 h-screen bg-white border w-8/12">
           <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
             <li className="hover:bg-white text-slate-800 py-4 px-6 w-full"><Link to="/">Home</Link></li>
             <li className="hover:bg-white text-slate-800 py-4 px-6 w-full"><Link to="/about">About Us</Link></li>
@@ -69,7 +69,7 @@ const Header = () => {
                     onClick={()=> setIsLoggedIn(true)}>
                       Login
                       </button>
-                    )
+                )
             }
             </li>
           </ul>
