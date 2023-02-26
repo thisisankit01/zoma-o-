@@ -47,11 +47,13 @@ const Header = () => {
           }
 
 
-        <button className="py-3 mx-2 focus:outline-none block sm:hidden bg-red-500 px-4 rounded-md text-white ">
+        <button className="py-3 mx-2 focus:outline-none block sm:hidden bg-red-500 px-4 rounded-md text-white group">
          <div className="w-5 h-[0.15rem] bg-white mb-1"></div>
          <div className="w-5 h-[0.15rem] bg-white mb-1"></div>
          <div className="w-5 h-[0.15rem] bg-white"></div>
-         <div className="absolute top-20 -right-full h-screen bg-white border w-8/12 opacity-0 group-focus:right-0 group-focus:opacity-100 transition-all duration-300">
+         <div
+          className="absolute top-20 -right-full h-screen bg-white border w-8/12 opacity-0 
+              group-focus:right-0 group-focus:opacity-100 transition-all duration-300">
           <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
             <li className="hover:bg-white text-slate-800 py-4 px-6 w-full"><Link to="/">Home</Link></li>
             <li className="hover:bg-white text-slate-800 py-4 px-6 w-full"><Link to="/about">About Us</Link></li>
