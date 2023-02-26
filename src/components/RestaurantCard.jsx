@@ -8,7 +8,7 @@ const Restaurantcard = ({cloudinaryImageId,name,cuisines,lastMileTravelString}) 
    </figure>
    <div className="px-5 items-center text-left max-w-60 py-2">
      <h2 className="text-md leading-6 font-semibold">{name}</h2>
-     <h3 className="text-xs text-slate-400 ">{cuisines.join(", ")}</h3>
+     <h3 className="text-xs text-slate-400">{cuisines.join(", ")}</h3>
     <h4 className="py-4">{lastMileTravelString}</h4>
    </div>
    </div>

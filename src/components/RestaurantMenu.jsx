@@ -46,15 +46,17 @@ function RestaurantMenu() {
         <div class="flex items-center pt-2 mb-5">
             <span class="bg-red-300 red-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-red-800 ml-3">{restaurantMenu.avgRating}</span>
         </div>
-        {/* <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-            <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-        </div> */}
+
       </div>
     <div className='px-6 space-y-2'>
         <h3 className='text-slate-700'><strong>Location </strong> : {restaurantMenu.area}, {restaurantMenu.city}</h3>
         <h3 className='text-slate-700'><strong>Cost For Two </strong> : {restaurantMenu.costForTwoMsg}</h3>
     </div>
+
+    {/* <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+            <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+        </div> */}
   </div>
 
     <div className='max-sm:pt-12 max-sm:pr-[3rem]'>
@@ -69,12 +71,13 @@ function RestaurantMenu() {
             {result.map((item) => (
               <tr key={item.id}>
                 <td className='border px-4 py-2'>{item.name}</td>
-                <td className='border px-4 py-2'>{item.price.toFixed(2)}</td> 
+                <td className='border px-4 py-2'>₹ {(item.price)/100}</td> 
               </tr>
             ))}
           </tbody>
        </table>
     </div>
+
 </div>
 </>
   );

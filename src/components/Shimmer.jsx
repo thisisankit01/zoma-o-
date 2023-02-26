@@ -26,14 +26,17 @@ const Shimmer = () => {
 
     </form>
   </div>
-
-      <div className="grid grid-row place-items-center">
-        {Array(10)
+  
+  <div className="grid grid-row place-items-center pb-10">
+      <div className="grid grid-cols-4 grid-flow-row gap-6 pt-11 max-w-fit max-sm:grid-cols-1 max-xl:grid-cols-3 max-xl:gap-0 max-md:grid-cols-2">
+        {Array(15)
           .fill("")
           .map((index) => (
             <div
-              className="w-56 p-4 m-3 shadow-lg rounded-md space-y-3" key={index}>
-              <img className="rounded-md" src={shimmerImageUrl} />
+              className="w-72 p-4 m-3 shadow-lg h-80 rounded-md space-y-3" key={index}>
+              <figure className="">
+                <img src={shimmerImageUrl}/>
+              </figure>
               <img className="w-[100%] h-4 rounded" src={shimmerImageUrl} />
               <img className="w-[70%] h-4 rounded" src={shimmerImageUrl} />
               <img className="w-[90%] h-4 rounded" src={shimmerImageUrl} />
@@ -41,6 +44,7 @@ const Shimmer = () => {
           ))}
         ;
       </div>
+  </div>
     </>
   );
 };
