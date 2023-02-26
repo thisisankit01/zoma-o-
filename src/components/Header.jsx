@@ -47,7 +47,7 @@ const Header = () => {
           }
 
 
-        <button className="py-3 mx-2 focus:outline-none block sm:hidden bg-red-500 px-4 rounded-md text-white group">
+        <button className="py-3 mx-2 focus:outline-none block sm:hidden bg-red-500 px-4 rounded-md text-white ">
          <div className="w-5 h-[0.15rem] bg-white mb-1"></div>
          <div className="w-5 h-[0.15rem] bg-white mb-1"></div>
          <div className="w-5 h-[0.15rem] bg-white"></div>

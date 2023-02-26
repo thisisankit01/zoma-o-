@@ -4,7 +4,7 @@ import "tailwindcss/tailwind.css"
   const Contact = () => {
   return (
     <div>
-      <section className="text-gray-700 body-font relative">
+      <section className="text-gray-700">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl text-2xl font-bold title-font mb-4 text-gray-900">
