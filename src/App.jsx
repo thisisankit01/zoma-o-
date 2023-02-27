@@ -6,12 +6,12 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/Profile";
 
 function App() {
   return (
     <>
       <Header />
-      {/* {} */}
       <Outlet />
       <Footer />
     </>
@@ -31,6 +31,12 @@ export const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: "/contact",

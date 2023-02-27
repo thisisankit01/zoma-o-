@@ -1,5 +1,8 @@
 import React from "react";
 import restaurantAbout from "/src/images/download.jpg";
+import { Outlet } from "react-router-dom";
+import Profile from "./ProfileClass";
+import ProfileFunction from "./Profile";
 
 export const AboutUs = () => {
   return (
@@ -25,6 +28,8 @@ export const AboutUs = () => {
       <figure className="pt-[5rem]">
         <img src={restaurantAbout} alt="" height={250} width={250} />
       </figure>
+      <Profile name={"Ankit"} />
+      <ProfileFunction name={"Pandey"} />
     </div>
   );
 };
