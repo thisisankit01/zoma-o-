@@ -1,30 +1,29 @@
-import Header from './components/Header'
-import Body from './components/Body'
-import AboutUs from './components/AboutUs'
-import Error from './components/Error'
-import { createBrowserRouter, Outlet } from 'react-router-dom'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import RestaurantMenu from './components/RestaurantMenu'
+import Header from "./components/Header";
+import Body from "./components/Body";
+import AboutUs from "./components/AboutUs";
+import Error from "./components/Error";
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 function App() {
-
   return (
     <>
-    <Header/>
-    {/* {} */}
-    <Outlet />
-    <Footer />
+      <Header />
+      {/* {} */}
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
 export const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement:<Error />,
-    children:[
+    errorElement: <Error />,
+    children: [
       {
         path: "/",
         element: <Body />,
@@ -43,10 +42,9 @@ export const appRouter = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
-export default App
+export default App;
 
-
-//using client side routing in this not server side 
+//using client side routing in this not server side
 //SPA - single page responsiblity

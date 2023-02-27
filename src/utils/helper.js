@@ -8,10 +8,13 @@ export function filterData(searchInput, restaurants) {
   return filteredData;
 }
 
- export async function getRestaurants( setAllRestaurants,setFilteredRestaurants) {
+export async function getRestaurants(
+  setAllRestaurants,
+  setFilteredRestaurants
+) {
   try {
     const response = await fetch(restaurantList);
-    const json  = await response.json();
+    const json = await response.json();
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   } catch (error) {

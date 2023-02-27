@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-  const Contact = () => {
+const Contact = () => {
   return (
     <div>
       <section className="text-gray-700">
@@ -17,7 +17,10 @@ import React from 'react';
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">
-                  <label htmlFor="name" className="leading-7 text-sm text-gray-600">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
                     Name
                   </label>
                   <input
@@ -137,6 +140,6 @@ import React from 'react';
       </section>
     </div>
   );
-}
+};
 
 export default Contact;
