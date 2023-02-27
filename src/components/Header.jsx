@@ -74,7 +74,10 @@ const Header = () => {
             <div className="w-5 h-[0.15rem] bg-white mb-1"></div>
             <div className="w-5 h-[0.15rem] bg-white"></div>
           </button>
-          <div className={`fixed inset-0 ${showMenu ? "z-10" : "hidden"}`}>
+          <div
+            className={`fixed inset-0 ${showMenu ? "z-10" : "hidden"}`}
+            onClick={toggleMenu}
+          >
             <div
               className="absolute inset-0 bg-gray-900 opacity-50"
               onClick={toggleMenu}
@@ -82,19 +85,25 @@ const Header = () => {
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
               <div className="bg-white rounded-md shadow-lg w-48">
                 <ul className="text-center divide-y divide-gray-200">
-                  <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-                    <Link to="/">Home</Link>
+                  <li className="py-2 px-4 cursor-pointer">
+                    <Link to="/" onClick={toggleMenu}>
+                      Home
+                    </Link>
                   </li>
-                  <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-                    <Link to="/about">About Us</Link>
+                  <li className="py-2 px-4 cursor-pointer">
+                    <Link to="/about" onClick={toggleMenu}>
+                      About Us
+                    </Link>
                   </li>
-                  <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-                    <Link to="/contact">Contact</Link>
+                  <li className="py-2 px-4 cursor-pointer">
+                    <Link to="/contact" onClick={toggleMenu}>
+                      Contact
+                    </Link>
                   </li>
-                  <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                  <li className="py-2 px-4 cursor-pointer">
                     {isLoggedIn ? (
                       <button
-                        className="py-3 bg-red-500 px-4 rounded-md text-white"
+                        className="py-2 bg-red-500 px-4 rounded-md text-white"
                         onClick={() => setIsLoggedIn(false)}
                       >
                         Logout
