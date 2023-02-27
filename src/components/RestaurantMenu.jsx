@@ -1,9 +1,11 @@
 import React from "react";
-import { json, useParams } from "react-router-dom";
+import { ReactDOM } from "react";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { IMG_CDN_URL } from "../config";
+import { imageUrl, shimmerImageUrl } from "../config";
 
 function RestaurantMenu() {
+  const [searchInput, setSearchInput] = useState("");
   const [restaurantMenu, setRestaurantMenu] = useState([]);
 
   //reading a dynamic url params
@@ -19,10 +21,9 @@ function RestaurantMenu() {
         resId
     );
     const json = await data.json();
-    console.log(json.data);
     setRestaurantMenu(json.data);
   }
-  //  console.log(restaurantMenu?.menu?.items[14413513]);
+  console.log(restaurantMenu?.menu?.items);
 
   const result = [];
 
@@ -31,6 +32,7 @@ function RestaurantMenu() {
       id: i,
       name: restaurantMenu?.menu?.items[i].name,
       price: restaurantMenu?.menu?.items[i].price,
+      cloudinaryImageId: restaurantMenu?.menu?.items[i].cloudinaryImageId,
     });
   console.log(result);
 
@@ -43,60 +45,68 @@ function RestaurantMenu() {
         {restaurantMenu.name}
       </h1>
 
-      <div className="space-x-10 grid grid-flow-col max-sm:grid-flow-row place-content-center pt-10 px-10">
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[450px]">
-          <figure>
-            <img
-              className="p-6 rounded-t-lg"
-              src={IMG_CDN_URL + restaurantMenu.cloudinaryImageId}
-              alt="product image"
-            />
-          </figure>
-          <div className="px-6 pb-4 grid grid-flow-col">
-            <a href="#">
-              <h5 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                {restaurantMenu.name}
-              </h5>
-            </a>
-            <div className="flex items-center pt-2 mb-5">
-              <span className="bg-red-300 red-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-red-800 ml-3">
-                {restaurantMenu.avgRating}
-              </span>
+      <div className="grid place-content-center grid-flow-row max-sm:grid-flow-row pt-10 px-10">
+        <div className="bg-red-300 max-sm:bg-white py-8 grid place-content-center">
+          <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow h-[450px]">
+            <figure>
+              <img
+                className="p-6 rounded-t-lg"
+                src={imageUrl + restaurantMenu.cloudinaryImageId}
+                alt="product image"
+              />
+            </figure>
+            <div className="px-6 pb-4 grid grid-flow-col max-sm:grid-flow-row">
+              <a href="#">
+                <h5 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  {restaurantMenu.name}
+                </h5>
+              </a>
+              <div className="flex items-center pt-2 mb-5">
+                <span className="bg-red-300 red-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-red-800 max-sm:ml-1 ml-3">
+                  {restaurantMenu.avgRating}
+                </span>
+              </div>
+            </div>
+            <div className="px-6 space-y-2">
+              <h3 className="text-slate-700">
+                <strong>Location </strong> : {restaurantMenu.area},{" "}
+                {restaurantMenu.city}
+              </h3>
+              <h3 className="text-slate-700">
+                <strong>Cost For Two </strong> : {restaurantMenu.costForTwoMsg}
+              </h3>
             </div>
           </div>
-          <div className="px-6 space-y-2">
-            <h3 className="text-slate-700">
-              <strong>Location </strong> : {restaurantMenu.area},{" "}
-              {restaurantMenu.city}
-            </h3>
-            <h3 className="text-slate-700">
-              <strong>Cost For Two </strong> : {restaurantMenu.costForTwoMsg}
-            </h3>
-          </div>
-
-          {/* <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-            <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-        </div> */}
         </div>
 
-        <div className="max-sm:pt-12 max-sm:pr-[3rem]">
-          <table className="text-center">
-            <thead>
-              <tr>
-                <th className="border px-4 py-2 text-2xl font-bold">Name</th>
-                <th className="border px-4 py-2 text-2xl font-bold">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {result.map((item) => (
-                <tr key={item.id}>
-                  <td className="border px-4 py-2">{item.name}</td>
-                  <td className="border px-4 py-2">₹ {item.price / 100}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="pt-12">
+          <div className="grid grid-cols-4 grid-flow-row gap-6 pt-11 max-w-fit max-sm:space-y-5 max-sm:grid-cols-1 max-xl:grid-cols-3 max-xl:gap-0 max-md:grid-cols-2">
+            {result.map((item) => (
+              <div className="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
+                <img
+                  className="w-64 mx-auto transform transition duration-300 hover:scale-105"
+                  src={
+                    item.cloudinaryImageId.length === 0
+                      ? shimmerImageUrl
+                      : imageUrl + item.cloudinaryImageId
+                  }
+                  alt=""
+                />
+                <div className="flex flex-col items-center my-3 space-y-2">
+                  <h1 className="text-gray-900 poppins text-lg">{item.name}</h1>
+                  <p className="text-gray-500 poppins text-sm text-center">
+                    {}
+                  </p>
+                  <h2 className="text-gray-900 poppins text-2xl font-bold">
+                    ₹{item.price / 100}
+                  </h2>
+                  <button className="bg-red-500 text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">
+                    Add Item
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

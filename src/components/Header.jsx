@@ -100,6 +100,13 @@ const Header = () => {
                       Contact
                     </Link>
                   </li>
+                  <li className="grid grid-flow-col place-content-center py-2 px-4 cursor-pointer">
+                    <h4 className="pt-2">Cart</h4>
+                    <button>
+                      <img src={cartImage} alt="" />
+                    </button>
+                    <h4 className="pt-2">(0)</h4>
+                  </li>
                   <li className="py-2 px-4 cursor-pointer">
                     {isLoggedIn ? (
                       <button
