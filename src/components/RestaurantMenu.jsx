@@ -83,7 +83,7 @@ function RestaurantMenu() {
           </div>
         </div>
 
-        <div className="pt-12">
+        <div className="mx-auto pt-12">
           <div className="grid grid-cols-4 grid-flow-row gap-8 pt-11 max-w-[80rem] max-sm:grid-cols-1 max-xl:grid-cols-3 max-md:grid-cols-2">
             {result.map((item) => (
               <div className="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg w-72">

@@ -20,7 +20,7 @@ function Error() {
               <p className="my-2 text-gray-800">
                 {err.status} : {err.statusText}
               </p>
-              <button className="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-red-500 text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:bg-red-500 focus:ring-opacity-50">
+              <button className="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-blue-500 text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:bg-blue-500 focus:ring-opacity-50">
                 <Link to="/">Take me there!</Link>
               </button>
             </div>
