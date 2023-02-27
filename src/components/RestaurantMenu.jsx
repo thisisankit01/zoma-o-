@@ -42,14 +42,11 @@ function RestaurantMenu() {
     <Shimmer />
   ) : (
     <>
-      <h1 className="grid place-content-center pt-6 font-bold text-5xl text-slate-500">
-        Menu
-      </h1>
-      <h1 className="text-center pt-3 font-bold text-3xl text-slate-500">
+      <h1 className="pt-12 text-center underline-offset-2 font-bold text-3xl text-slate-500">
         {restaurantMenu.name}
       </h1>
 
-      <div className="grid place-content-center grid-flow-row max-sm:grid-flow-row pt-10 px-10">
+      <div className="pb-4 grid place-content-center grid-flow-row max-sm:grid-flow-row pt-10 px-10">
         <div className="bg-red-300 rounded-md max-sm:bg-white py-8 grid place-content-center">
           <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow h-[450px]">
             <figure>
@@ -82,7 +79,11 @@ function RestaurantMenu() {
             </div>
           </div>
         </div>
-
+        <hr />
+        <h1 className="grid place-content-center py-6 font-bold text-5xl text-slate-500">
+          Menu
+        </h1>
+        <hr />
         <div className="mx-auto pt-12">
           <div className="grid grid-cols-4 grid-flow-row gap-8 pt-11 max-w-[80rem] max-sm:grid-cols-1 max-xl:grid-cols-3 max-md:grid-cols-2">
             {result.map((item) => (
