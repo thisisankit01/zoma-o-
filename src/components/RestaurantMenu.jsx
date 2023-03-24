@@ -19,7 +19,7 @@ function RestaurantMenu() {
 
   async function getRestaurantInfo() {
     const data = await fetch(
-      "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=" +
+      "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=" +
         resId
     );
     const json = await data.json();
@@ -58,12 +58,12 @@ function RestaurantMenu() {
             </figure>
             <div className="px-6 pb-4 grid grid-flow-col max-sm:grid-flow-row">
               <a href="#">
-                <h5 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="text-2xl font-semibold tracking-tight text-gray-900 ">
                   {restaurantMenu.name}
                 </h5>
               </a>
               <div className="flex items-center pt-2 mb-5">
-                <span className="bg-red-300 red-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-red-800 max-sm:ml-1 ml-3">
+                <span className="bg-red-300 red-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  dark:text-red-800 max-sm:ml-1 ml-3">
                   {restaurantMenu.avgRating}
                 </span>
               </div>
