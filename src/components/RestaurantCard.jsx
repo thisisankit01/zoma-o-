@@ -7,7 +7,7 @@ const Restaurantcard = ({
   lastMileTravelString,
 }) => {
   return (
-    <div className="w-72 bg-base-100 hover:shadow-2xl h-80 max-sm:w-80 max-xs:w-56 hover:border-solid hover:border-2">
+    <div className="w-72 bg-base-100 hover:shadow-2xl h-80 max-sm:w-80 max-xs:w-56 hover:border-solid shadow-md rounded-md">
       <figure className="px-5 pt-5">
         <img src={imageUrl + cloudinaryImageId} />
       </figure>
