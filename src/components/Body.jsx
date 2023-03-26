@@ -79,7 +79,7 @@ const Body = () => {
             Sorry, No Restaurant Found
           </h1>
         ) : (
-          <div className="grid grid-cols-4 grid-flow-row gap-6 pt-11 max-w-fit max-sm:grid-cols-1 max-xl:grid-cols-3 max-xl:gap-0 max-md:grid-cols-2 max-sm:gap-10">
+          <div className="grid grid-cols-4 grid-flow-row gap-6 pt-11 max-w-fit max-sm:grid-cols-1 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:gap-10 max-xl:gap-8">
             {filteredRestaurants.map((restaurant) => {
               return (
                 <Link
