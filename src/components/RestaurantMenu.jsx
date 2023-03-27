@@ -1,4 +1,5 @@
 import React from "react";
+import { RES_MENU } from "../config";
 import { ReactDOM } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ import MenuShimmerImage from "/src/images/MenuShimmerImage.png";
 function RestaurantMenu() {
   // const [searchInput, setSearchInput] = useState("");
   const [restaurantMenu, setRestaurantMenu] = useState([]);
+  const [menuItems, setMenuItems] = useState(null);
 
   //reading a dynamic url params
   const { resId } = useParams();
@@ -17,19 +19,31 @@ function RestaurantMenu() {
     getRestaurantInfo();
   }, []);
 
+  useEffect(() => {
+    console.log(restaurantMenu);
+  }, [restaurantMenu]);
+
   async function getRestaurantInfo() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=" +
-        resId
-    );
+    const data = await fetch(RES_MENU + resId);
     const json = await data.json();
-    setRestaurantMenu(json.data);
+    console.log(json);
+    setRestaurantMenu(json?.data?.cards[0]?.card?.card?.info);
+    setMenuItems(
+      Object.values(
+        json?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+      )
+    );
   }
-  console.log(restaurantMenu?.menu?.items);
+
+  console.log(menuItems);
+  const itemcard = menuItems
+    ?.filter((data) => data?.card?.card?.itemCards)
+    .map((menuItem) => menuItem?.card?.card?.itemCards);
+  console.log(itemcard);
 
   const result = [];
 
-  for (let i in restaurantMenu?.menu?.items)
+  for (let i in menuItems)
     result.push({
       id: i,
       name: restaurantMenu?.menu?.items[i].name,
